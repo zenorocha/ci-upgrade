@@ -4,12 +4,12 @@
 
 ## Instructions
 
-A) Deploy new version of the CI service
+**A) Deploy new version of the CI service**
 
 
 ```sh
 curl -X POST "https://api.us-west-1.liferay.cloud/projects/<PROJECT_ID>/build" \
-	 -u "<YOUR_EMAIL>:<YOUR_PASSWORD>" \
+     -u "<YOUR_EMAIL>:<YOUR_PASSWORD>" \
      -H "Content-Type: application/json" \
      -d $'{
   "masterToken": "<PROJECT_MASTER_TOKEN>",
@@ -18,7 +18,7 @@ curl -X POST "https://api.us-west-1.liferay.cloud/projects/<PROJECT_ID>/build" \
 }'
 ```
 
-B) Remove extra environment variables
+**B) Remove extra environment variables**
 
 1. Go to the `Environments Variables` tab of the infra service
 2. Remove the following variables:
@@ -32,11 +32,11 @@ B) Remove extra environment variables
 	* WEDEPLOY_LIFERAY_COM_PASSWORD
 	* WEDEPLOY_LIFERAY_COM_USER
 
-C) Remove hidden definition
+**C) Remove hidden definition**
 
 ```sh
 curl -X POST "https://api.us-west-1.liferay.cloud/projects" \
-	 -u "<YOUR_EMAIL>:<YOUR_PASSWORD>" \
+     -u "<YOUR_EMAIL>:<YOUR_PASSWORD>" \
      -H "Content-Type: application/json" \
      -d $"{\"projectId\": \"<PROJECT_ID>\", \"metadata\": {\"repository\": \"https://github.com/<GITHUB_OWNER>/<PROJECT_ID>\", \"type\": \"non-production\"}}"
 ```
