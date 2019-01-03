@@ -1,0 +1,13 @@
+{
+    "id": "ci",
+    "image": "@@liferay.workspace.wedeploy.jenkins.image@@",
+    "memory": 8192,
+    "cpu": 4,
+    "zeroDowntime": false,
+    "volumes": {
+      "ciData": "/var/jenkins_home"
+    },
+    "healthCheck": {
+      "url": "localhost:8080/login"
+    }
+}
