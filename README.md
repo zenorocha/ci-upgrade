@@ -14,7 +14,7 @@ curl -X POST "https://api.us-west-1.liferay.cloud/projects/<PROJECT_ID>/build" \
      -d $'{
   "masterToken": "<PROJECT_MASTER_TOKEN>",
   "provider": "github",
-  "repository": "https://<GITHUB_TOKEN>@github.com/dxpcloud/ci-upgrade"
+  "repository": "https://github.com/dxpcloud/ci-upgrade"
 }'
 ```
 
