@@ -32,11 +32,11 @@ curl -X POST "https://api.us-west-1.liferay.cloud/projects/<PROJECT_ID>/build" \
 	* WEDEPLOY_LIFERAY_COM_PASSWORD
 	* WEDEPLOY_LIFERAY_COM_USER
 
-**C) Remove hidden definition**
+**C) Make CI service available to the user**
 
 ```sh
-curl -X POST "https://api.us-west-1.liferay.cloud/projects" \
+curl -X PATCH "https://api.us-west-1.liferay.cloud/projects/<PROJECT_ID>" \
      -u "<YOUR_EMAIL>:<YOUR_PASSWORD>" \
      -H "Content-Type: application/json" \
-     -d $"{\"projectId\": \"<PROJECT_ID>\", \"metadata\": {\"repository\": \"https://github.com/<GITHUB_OWNER>/<PROJECT_ID>\", \"type\": \"non-production\"}}"
+     -d $'{"metadata": {"hide": false}}'
 ```
