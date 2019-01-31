@@ -1,13 +1,36 @@
 {
-    "id": "ci",
-    "image": "wedeploy/dxpcloud-jenkins:2.138.3-1.6",
-    "memory": 8192,
-    "cpu": 4,
-    "zeroDowntime": false,
-    "volumes": {
-      "ciData": "/var/jenkins_home"
-    },
-    "healthCheck": {
-      "url": "localhost:8080/login"
-    }
+	"id": "ci",
+	"image": "wedeploy/dxpcloud-jenkins:2.138.3-1.6",
+	"deploy": false,
+	"memory": 8192,
+	"cpu": 4,
+	"zeroDowntime": false,
+	"volumes": {
+		"ciData": "/var/jenkins_home"
+	},
+	"healthCheck": {
+		"url": "localhost:8080/login"
+	},
+	"env": {
+		"DXPCLOUD_PROJECT_NAME": "liferaydaniel",
+		"JENKINS_URL": "https://ci-liferaydaniel-infra.eu-west-1.lfr.cloud",
+		"JENKINS_ADMIN_USER_NAME": "liferaydaniel",
+		"JENKINS_ADMIN_EMAIL": "liferaydaniel@liferay.com",
+
+		"JENKINS_CUSTOMER_USER_NAME": "customer",
+		"JENKINS_CUSTOMER_PASSWORD": "6mXDnsO5oA3U1cgxe1Hn43VSj3ywqx",
+
+		"JENKINS_EMAIL_NOTIFICATIONS_FROM": "Jenkins CI - liferaydaniel <liferaydaniel@liferay.com>",
+
+		"WEDEPLOY_REMOTE": "eu-west-1.liferay.cloud",
+		"WEDEPLOY_USER_NAME": "liferaydaniel@liferay.com",
+		"WEDEPLOY_PASSWORD": "LU8rpmTs{ecfQDP",
+
+		"GITHUB_REPOSITORY": "dxpcloud/liferaydaniel"
+	},
+	"environments": {
+		"infra": {
+			"deploy": true
+		}
+	}
 }
